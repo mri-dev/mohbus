@@ -1,0 +1,133 @@
+.fusion-secondary-header{
+  border-bottom: 2px solid #aca563;
+}
+.top-header-holder{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+
+  & > div {
+    border: 1px solid #aca563;
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+    line-height: 45px;
+    text-align: center;
+    color: #333333;
+
+    a{
+      color: #333333;
+      text-transform: none;
+    }
+  }
+  & > .language-changer{
+    flex-basis: 125px;
+  }
+  & > .social-icons{
+    flex-basis: 110px;
+  }
+  & > .contact-phone{
+    flex-basis: 140px;
+  }
+  & > .contact-address{
+    flex-basis: 200px;
+    color: $color-red;
+  }
+  & > .contact-email{
+    flex-basis: 180px;
+    text-align: center;
+  }
+  & > .searcher{
+    flex:1;
+
+    .searcher-holder{
+      position: relative;
+      button{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45px;
+        height: 45px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+    }
+
+    input[type=text]{
+      height: 45px;
+      line-height: 45px;
+      padding-right: 45px;
+      background: transparent;
+      border: none;
+      font-size: 0.83rem;
+      color: black;
+      &:focus{
+        outline: none;
+        background: #f5f2e0;
+      }
+    }
+  }
+}
+.fusion-main-menu > ul > li > a {
+  text-transform: uppercase;
+}
+.fusion-social-networks .fusion-social-network-icon{
+  border: 1px solid #54534c;
+  font-size: 13px;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 0 5px 5px;
+}
+.footer-contacts-holder{
+  h2{
+    font-family: 'Roboto' !important;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+  .contact-lines{
+    & > div {
+      padding: 8px 0;
+      border-bottom: 1px solid #c7baa0;
+      i {
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+  .socials{
+    padding: 15px 0 0 0;
+    a{
+      border-color: white;
+      color: white;
+      font-size: 15px;
+      padding: 10px;
+    }
+    .fusion-social-network-icon:before{
+      color: white;
+    }
+  }
+}
+#wrapper .fusion-vertical-menu-widget .menu li{
+  border-bottom: 1px solid white;
+  padding: 0;
+}
+#wrapper .fusion-vertical-menu-widget .menu li:last-child{
+  border-bottom: none;
+}
+#wrapper .fusion-vertical-menu-widget .menu li > a{
+  padding: 8px 0 !important;
+  text-transform: uppercase;
+  color: white;
+  font-weight: normal !important;
+}
+#wrapper .fusion-vertical-menu-widget .menu li.current_page_item > a{
+  border-right-color: transparent;
+  font-weight: bold !important;
+  color: white;
+}
