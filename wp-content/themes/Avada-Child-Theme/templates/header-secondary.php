@@ -13,6 +13,16 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
+
+$languages = get_languages();
+$current_lang = false;
+
+foreach ((array)$languages as $lang) {
+	if ($lang->current) {
+		$current_lang = $lang;
+		break;
+	}
+}
 ?>
 <?php
   $cont_phone = get_option('phone', true);
@@ -23,12 +33,33 @@ if ( ! defined( 'ABSPATH' ) ) {
     'position' => 'header'
   ));
 ?>
-
 <div class="fusion-secondary-header">
 	<div class="fusion-row">
 		  <div class="top-header-holder">
         <div class="language-changer">
-          lang
+          <div class="wrapper">
+          	<div class="current">
+          		<div class="flag"><img src="<?php echo $current_lang->flag; ?>" alt="<?php echo $current_lang->lang; ?>"></div>
+							<div class="lang-text"><?php echo $current_lang->lang; ?></div>
+							<?php if (count($languages) != 1): ?>
+							<div class="sep">
+								<i class="fa fa-angle-down"></i>
+							</div>
+							<?php endif; ?>
+          	</div>
+						<?php if (count($languages) != 1): ?>
+						<div class="lang-list">
+							<?php foreach ((array)$languages as $l): ?>
+							<div class="lang <?=($l->current)?'current-lang':''?>">
+								<a href="https://<?php echo $l->domain; ?>">
+									<div class="flag"><img src="<?php echo $l->flag; ?>" alt="<?php echo $l->lang; ?>"></div>
+									<div class="lang-text"><?php echo $l->lang; ?></div>
+								</a>
+							</div>
+							<?php endforeach; ?>
+						</div>
+						<?php endif; ?>
+          </div>
         </div>
         <?php if ($social_icons): ?>
         <div class="social-icons">

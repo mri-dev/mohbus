@@ -30,6 +30,32 @@ function get_site_title( $site = '' )
   return $title;
 }
 
+function get_languages()
+{
+  global $wpdb;
+  $qry = $wpdb->prepare("SELECT blog_id, domain FROM {$wpdb->prefix}blogs WHERE public = 1 and deleted = 0 and archived = 0");
+  $qry = $wpdb->get_results($qry);
+  $langs = array();
+
+  if ($qry) {
+    foreach ( (array)$qry as $q ) {
+      $q->current = ($q->blog_id == get_current_blog_id()) ? true : false;
+      // English
+      if (strpos($q->domain, 'en.busojaras' ) !== false) {
+        $q->lang = "English";
+        $q->local = "en_US";
+      } else {
+        $q->lang = "Magyar";
+        $q->local = "hu_HU";
+      }
+      $q->flag = IMG.'/flags/'.$q->local.".png";
+      $langs[] = $q;
+    }
+  }
+
+  return $langs;
+}
+
 function get_site_prefix()
 {
   return '';

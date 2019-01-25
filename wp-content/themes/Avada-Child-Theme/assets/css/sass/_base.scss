@@ -73,8 +73,119 @@
     }
   }
 }
+
+.language-changer {
+  .current {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    & > div{
+      line-height: 45px;
+      position: relative;
+    }
+    .sep{
+      padding: 0 0 0 25px;
+    }
+  }
+
+  .flag {
+    position: relative;
+    flex-basis: 40px;
+    height: 100%;
+
+    img {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+    }
+  }
+
+  .lang-list {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: -1px;
+    right: -1px;
+    z-index: 1;
+    background: #f3eebd;
+    border: 1px solid #aca563;
+    border-top: none;
+
+    .lang{
+      &.current-lang{
+        background: #c7bf8c;
+        color: white;
+      }
+    }
+
+    a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      .flag {
+        position: relative;
+        flex-basis: 40px;
+        height: 100%;
+
+        img {
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          -webkit-transform: translate(-50%,-50%);
+              transform: translate(-50%,-50%);
+        }
+      }
+    }
+  }
+
+  & > .wrapper {
+    position: relative;
+    &:hover{
+      .lang-list{
+        display: block !important;
+      }
+    }
+  }
+}
+.fusion-page-title-bar .fusion-page-title-row h1{
+  font-weight: bold;
+  font-size: 2.4rem;
+  line-height: 1.4;
+}
+.fusion-main-menu{
+  margin-top: 25px;
+}
+.fusion-main-menu > ul > li{
+  border-top: 3px solid transparent !important;
+  &:hover{
+    background: #e6e1c0;
+    border: 1px solid #ccc9bc;
+    border-top: 3px solid #c7ac79 !important;
+  }
+}
+.fusion-main-menu .sub-menu{
+  border: 1px solid #ccc9bc;
+  left: -1px;
+}
+.fusion-main-menu .sub-menu li{
+  border-left: 2px solid transparent !important;
+
+  &:hover, &.current-menu-item{
+    border-left: 4px solid #b05540 !important;
+  }
+}
 .fusion-main-menu > ul > li > a {
   text-transform: uppercase;
+  padding: 0 15px;
 }
 .fusion-social-networks .fusion-social-network-icon{
   border: 1px solid #54534c;
