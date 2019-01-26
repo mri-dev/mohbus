@@ -14,6 +14,10 @@ define('TD', 'buso');
 define('CAPTCHA_SITE_KEY', '6LemSzsUAAAAAMo_zYX4_iZrkJflAmCdXqAnUJFv');
 define('CAPTCHA_SECRET_KEY', '6LemSzsUAAAAAB3gw2paRrXodpkS8LsojL73_siW');
 
+@ini_set( 'upload_max_size' , '10M' );
+@ini_set( 'post_max_size', '10M');
+@ini_set( 'max_execution_time', '300' );
+
 // Includes
 require_once "includes/include.php";
 
@@ -64,12 +68,16 @@ function get_site_prefix()
 function theme_enqueue_styles() {
     wp_enqueue_style( 'avada-parent-stylesheet', get_template_directory_uri() . '/style.css?' );
     wp_enqueue_style( 'jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css', array(), '1.12.1' );
+    wp_enqueue_style( 'slick-theme', IFROOT . '/assets/vendors/slick/slick-theme.css');
+    wp_enqueue_style( 'slick', IFROOT . '/assets/vendors/slick/slick.css');
     //wp_enqueue_style( 'angular-material','//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css');
     //wp_enqueue_style( 'angualardatepick', IFROOT . '/assets/vendors/md-date-range-picker/md-date-range-picker.min.css?t=' . ( (DEVMODE === true) ? time() : '' ) );
+
 
     wp_enqueue_script( 'google-maps', '//maps.googleapis.com/maps/api/js?sensor=false&language='.get_locale().'&region=hu&libraries=places&key='.GOOGLE_API_KEY);
     wp_enqueue_script( 'recaptcha', '//www.google.com/recaptcha/api.js');
     wp_enqueue_script( 'jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.12.1');
+    wp_enqueue_script( 'slick', IFROOT . '/assets/vendors/slick/slick.min.js');
     //wp_enqueue_script( 'jquery-ui-loc-hu', IFROOT . '/assets/js/jquery-ui-loc-hu.js');
     //wp_enqueue_script( 'fontasesome', '//use.fontawesome.com/releases/v5.0.6/js/all.js');
     //wp_enqueue_script( 'angularjs', '//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js');
@@ -137,6 +145,46 @@ function facebook_og_meta_header()
 }
 add_action( 'wp_head', 'facebook_og_meta_header', 5);
 
+function fontawesome_header()
+{
+  ?>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <script type="text/javascript">
+    (function($){
+      $(function(){
+        jQuery.each($('.autocorrett-height-by-width'), function(i,e){
+          var delayed = $(e).data('delayed');
+          delayed = (isNaN(delayed)) ? 0 : parseFloat(delayed);
+          console.log(delayed);
+          setTimeout(function(){
+            var ew = $(e).width();
+            var ap = $(e).data('image-ratio');
+            var respunder = $(e).data('image-under');
+        		var pw = $(window).width();
+            ap = (typeof ap !== 'undefined') ? ap : '4:3';
+            var aps = ap.split(":");
+            var th = ew / parseInt(aps[0])  * parseInt(aps[1]);
+
+            if (respunder) {
+        			if (pw < respunder) {
+        				$(e).css({
+        	        height: th
+        	      });
+        			}
+        		} else{
+        			$(e).css({
+                height: th
+              });
+        		}
+          }, delayed);
+        });
+      });
+    })(jQuery);
+  </script>
+  <?
+}
+add_action( 'wp_head', 'fontawesome_header', 99);
+
 function avada_lang_setup() {
 	$lang = get_stylesheet_directory() . '/langs';
 	load_child_theme_textdomain( 'buso', $lang );
@@ -202,27 +250,18 @@ add_filter('query_vars', 'app_query_vars');
 function create_custom_posttypes()
 {
   // Programok
-  /*
-  $program = new PostTypeFactory( 'programok' );
-	$program->set_textdomain( TD );
-	$program->set_icon('tag');
-	$program->set_name( 'Program', 'Programok' );
-	$program->set_labels( array(
+
+  $videok = new PostTypeFactory( 'videok' );
+	$videok->set_textdomain( TD );
+	$videok->set_icon('tag');
+	$videok->set_name( 'Videó', 'Videók' );
+	$videok->set_labels( array(
 		'add_new' => 'Új %s',
 		'not_found_in_trash' => 'Nincsenek %s a lomtárban.',
 		'not_found' => 'Nincsenek %s a listában.',
 		'add_new_item' => 'Új %s létrehozása',
 	) );
-  $program->add_taxonomy( 'kategoria', array(
-    'rewrite' => 'program-kategoria',
-    'name' => array('Program kategória', 'Program kategóriák'),
-    'labels' => array(
-      'menu_name' => 'Program kategóriák',
-      'add_new_item' => 'Új %s',
-      'search_items' => '%s keresése',
-      'all_items' => '%s',
-    )
-  ) );
+  /*
   $program_metabox = new CustomMetabox(
     'programok',
     __('Program beállítások', 'buso'),
@@ -232,9 +271,10 @@ function create_custom_posttypes()
       'class' => 'programsettings-postbox'
     )
   );
-  $program->create();
-  add_post_type_support( 'programok', 'excerpt' );
   */
+  $videok->create();
+  add_post_type_support( 'videok', 'excerpt' );
+
 }
 
 function rd_query_vars($aVars) {
