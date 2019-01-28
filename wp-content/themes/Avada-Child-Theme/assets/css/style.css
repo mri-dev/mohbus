@@ -465,20 +465,23 @@
 /* line 375, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .bloglist-holder.view-of-video .video-item {
   flex-basis: calc(100% / 2);
+  padding: 15px;
+  height: 320px;
+  overflow: hidden;
 }
 
-/* line 380, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 383, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li {
   border-bottom: 1px solid white;
   padding: 0;
 }
 
-/* line 384, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 387, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li:last-child {
   border-bottom: none;
 }
 
-/* line 387, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 390, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li > a {
   padding: 8px 0 !important;
   text-transform: uppercase;
@@ -486,7 +489,7 @@
   font-weight: normal !important;
 }
 
-/* line 393, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 396, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li.current_page_item > a {
   border-right-color: transparent;
   font-weight: bold !important;

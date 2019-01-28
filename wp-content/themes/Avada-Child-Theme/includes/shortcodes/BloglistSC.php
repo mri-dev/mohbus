@@ -78,18 +78,33 @@ class BlogListSC
     $output .= '</div>';
 
     if ($attr['slide'] == '1') {
-      $output .= '<script>
-      (function($){
-        $(function(){
-          $(".is-slider#bloglist'.$hash.'").slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true
+      if ($attr['type'] == 'videok') {
+        $output .= '<script>
+        (function($){
+          $(function(){
+            $(".is-slider#bloglist'.$hash.'").slick({
+              infinite: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: false
+            });
           });
-        });
-      })(jQuery);
-      </script>';
+        })(jQuery);
+        </script>';
+      } else {
+        $output .= '<script>
+        (function($){
+          $(function(){
+            $(".is-slider#bloglist'.$hash.'").slick({
+              infinite: true,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              autoplay: true
+            });
+          });
+        })(jQuery);
+        </script>';
+      }
     }
 
     /* Return the output of the tooltip. */

@@ -374,6 +374,9 @@
     }
     .video-item{
       flex-basis: calc(100% / 2);
+      padding: 15px;
+      height: 320px;
+      overflow: hidden;
     }
   }
 }

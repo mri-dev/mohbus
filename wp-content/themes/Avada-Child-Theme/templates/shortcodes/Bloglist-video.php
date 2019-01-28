@@ -1,3 +1,4 @@
+<div class="video-stack">
 <?php
 if ( $datas->have_posts() ):
   $i = 0;
@@ -11,18 +12,12 @@ while ( $datas->have_posts() ):
   $url = get_the_permalink($pid);
   $desc = get_the_content($pid);
 ?>
-<?php if ($i == 1): ?>
-<div class="video-stack">
-<?php endif; ?>
-
+<?php if ($i == 1): ?><?php endif; ?>
 <div class="video-item">
-  <?php echo $i;//echo apply_filters('the_content', $desc); ?>
+  <div class="wrapper">
+    <?php echo apply_filters('the_content', $desc); ?>
+  </div>
 </div>
-<?php if ($i%4!==false): ?>
+<?php if ($i%4===0): ?></div><div class="video-stack"><?php endif; ?>
+<?php endwhile; endif; ?>
 </div>
-<div class="video-stack">
-<?php endif; ?>
-<?php
-endwhile;
-endif;
-?>
