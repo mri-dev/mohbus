@@ -14,10 +14,6 @@ define('TD', 'buso');
 define('CAPTCHA_SITE_KEY', '6LemSzsUAAAAAMo_zYX4_iZrkJflAmCdXqAnUJFv');
 define('CAPTCHA_SECRET_KEY', '6LemSzsUAAAAAB3gw2paRrXodpkS8LsojL73_siW');
 
-@ini_set( 'upload_max_size' , '10M' );
-@ini_set( 'post_max_size', '10M');
-@ini_set( 'max_execution_time', '300' );
-
 // Includes
 require_once "includes/include.php";
 
@@ -238,6 +234,7 @@ function rd_init()
   setlocale(LC_TIME, "hu_HU");
   add_rewrite_rule('^jelentkezes/([0-9]+)/?', 'index.php?custom_page=jelentkezes&ac_id=$matches[1]', 'top');
   create_custom_posttypes();
+  add_post_type_support( 'page', 'excerpt' );
 }
 add_action('init', 'rd_init');
 
