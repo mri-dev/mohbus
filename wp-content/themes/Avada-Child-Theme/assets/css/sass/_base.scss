@@ -424,6 +424,27 @@
     background: white;
     border:1px solid #dedede;
     padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+
+    .info{
+      flex: 1;
+    }
+    .pic {
+      flex-basis: 30%;
+      position: relative;
+
+      img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 140%;
+        max-width: initial;
+      }
+    }
 
     .date{
       font-size: 1rem;

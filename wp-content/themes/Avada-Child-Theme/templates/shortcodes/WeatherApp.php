@@ -9,10 +9,10 @@
       </div>
     </div>
     <div class="temp">
-      -10°
+      <?php echo floor($weather->fok); ?>°
     </div>
   </div>
   <div class="pic">
-
+    <img src="<?php echo $weather->kep; ?>" alt="Időjárás">
   </div>
 </div>
