@@ -246,8 +246,7 @@ add_filter('query_vars', 'app_query_vars');
 
 function create_custom_posttypes()
 {
-  // Programok
-
+  // Videók
   $videok = new PostTypeFactory( 'videok' );
 	$videok->set_textdomain( TD );
 	$videok->set_icon('tag');
@@ -272,7 +271,39 @@ function create_custom_posttypes()
   $videok->create();
   add_post_type_support( 'videok', 'excerpt' );
 
+  // Támogatóke
+  $tamogatok = new PostTypeFactory( 'tamogatok' );
+  $tamogatok->set_textdomain( TD );
+  $tamogatok->set_icon('tag');
+  $tamogatok->set_name( 'Támogató', 'Támogatók' );
+  $tamogatok->set_labels( array(
+    'add_new' => 'Új %s',
+    'not_found_in_trash' => 'Nincsenek %s a lomtárban.',
+    'not_found' => 'Nincsenek %s a listában.',
+    'add_new_item' => 'Új %s létrehozása',
+  ) );
+  /*
+  $program_metabox = new CustomMetabox(
+    'programok',
+    __('Program beállítások', 'buso'),
+    new ProgramMetaboxSave(),
+    'programok',
+    array(
+      'class' => 'programsettings-postbox'
+    )
+  );
+  */
+  $tamogatok->create();
+  add_post_type_support( 'tamogatok', 'excerpt' );
+
 }
+
+function wpsites_query( $query ) {
+  if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
+    $query->set( 'posts_per_page', 30 );
+  }
+}
+add_action( 'pre_get_posts', 'wpsites_query' );
 
 function rd_query_vars($aVars) {
   return $aVars;

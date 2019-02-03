@@ -380,7 +380,15 @@
       overflow: hidden;
     }
   }
-
+  &:not(.is-slide){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    article{
+      flex-basis: calc(100% / 3);
+    }
+  }
 }
 .top-highlight-holder{
   .right-panel{
@@ -418,8 +426,28 @@
     }
   }
 }
+.tamogato-logos-holder{
+  padding: 10px;
+
+  article{
+    img{
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+}
 .weather-app-holder{
   padding: 4px 10px;
+  position: relative;
+
+  .update{
+    position: absolute;
+    font-size: 0.6rem;
+    top: 8px;
+    right: 15px;
+    color: #d4d4d4;
+  }
+
   & > .wrapper{
     background: white;
     border:1px solid #dedede;
@@ -472,7 +500,7 @@
     margin: 15px 0;
 
     .image{
-      flex-basis: 30%;
+      flex-basis: 40%;
     }
 
     .cont{
@@ -569,4 +597,9 @@
   border-right-color: transparent;
   font-weight: bold !important;
   color: white;
+}
+.pagination{
+  width: 100%;
+  margin: 15px 0 0 0;
+  text-align: center;
 }

@@ -8,4 +8,5 @@
 	 require_once "PageHightlightSpotSC.php";
 	 require_once "QuickNavSC.php";
 	 require_once "WeatherAppSC.php";
+	 require_once "TamogatoLogosSC.php";
 ?>

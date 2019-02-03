@@ -1,3 +1,6 @@
+<div class="update" title="<?php echo __('Utoljára frissítve','buso'); ?>: <?php echo $weather->idopont; ?>">
+  <i class="fa fa-refresh"></i> <?php echo date('H:i', strtotime($weather->idopont)); ?>
+</div>
 <div class="wrapper">
   <div class="info">
     <div class="date">
