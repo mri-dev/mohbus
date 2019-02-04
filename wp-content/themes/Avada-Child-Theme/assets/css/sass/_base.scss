@@ -366,7 +366,9 @@
     }
   }
 
-  &.view-of-video{
+  &.view-of-video,
+  &.view-of-videok
+  {
     .video-stack {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -378,6 +380,11 @@
       padding: 15px;
       height: 320px;
       overflow: hidden;
+    }
+  }
+  &.view-of-videok:not(.is-slide){
+    .video-stack{
+      width: 100%;
     }
   }
   &:not(.is-slide){
@@ -602,4 +609,18 @@
   width: 100%;
   margin: 15px 0 0 0;
   text-align: center;
+}
+.fusion-footer footer .fusion-columns .fusion-column{
+  position: unset;
+}
+.fusion-footer footer .fusion-row{
+  position: relative;
+}
+.szechenyi-infoimg{
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  max-height: 180px;
+  max-width: initial !important;
+  width: auto;
 }

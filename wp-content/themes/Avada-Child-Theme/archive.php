@@ -10,6 +10,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
+global $wp_query;
+$posttype = $wp_query->query_vars['post_type'];
+$posttype = (!$posttype) ? 'post' : $posttype;
 ?>
 <?php get_header(); ?>
 <section id="content" <?php Avada()->layout->add_class( 'content_class' ); ?> <?php Avada()->layout->add_style( 'content_style' ); ?>>
@@ -20,9 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 	<?php endif; ?>
-  <div class="bloglist-holder view-of-post">
-    <?php while(have_posts()): ?>
+  <div class="bloglist-holder view-of-<?=$posttype?>">
+		<?php if ($posttype == 'videok'): ?><div class="video-stack"><?php endif; ?>
+    <?php $i = 0; while(have_posts()): ?>
       <?php
+			$i++;
       the_post();
       $pid = get_the_ID();
 
@@ -33,6 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
       $date = get_the_date( 'Y. F j.', $pid );
       $cats = wp_get_post_categories( $pid, array('fields' => 'all') );
       $pt = get_post_type($pid);
+		  $desc = get_the_content($pid);
       ?>
       <?php if ($pt == 'post'): ?>
       <article class="post-item">
@@ -57,8 +63,14 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
       </article>
       <?php elseif( $pt == 'videok' ): ?>
+				<div class="video-item">
+				  <div class="wrapper">
+				    <?php echo apply_filters('the_content', $desc); ?>
+				  </div>
+				</div>
       <?php endif; ?>
     <?php endwhile; wp_reset_postdata(); ?>
+		<?php if ($posttype == 'videok'): ?></div><?php endif; ?>
   </div>
   <div class="pagination">
     <?php echo paginate_links(); ?>

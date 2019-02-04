@@ -299,8 +299,13 @@ function create_custom_posttypes()
 }
 
 function wpsites_query( $query ) {
+  global $wp_query;
   if ( $query->is_archive() && $query->is_main_query() && !is_admin() ) {
-    $query->set( 'posts_per_page', 30 );
+    $ppp = 30;
+    if ($wp_query->query_vars['post_type'] == 'videok') {
+      $ppp = 4;
+    }
+    $query->set( 'posts_per_page', $ppp );
   }
 }
 add_action( 'pre_get_posts', 'wpsites_query' );
@@ -426,4 +431,15 @@ function getRecommendedPostIDSByTags( $posttype = 'posts', $postid = 0 )
   unset($posts);
 
   return $ids;
+}
+
+//Exclude pages from WordPress Search
+if (!is_admin()) {
+  function wpb_search_filter( $query ) {
+    if ($query->is_search) {
+      $query->set('post_type', 'post');
+    }
+    return $query;
+  }
+  add_filter('pre_get_posts','wpb_search_filter');
 }
