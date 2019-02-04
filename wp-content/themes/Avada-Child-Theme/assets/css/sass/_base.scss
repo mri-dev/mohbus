@@ -564,8 +564,17 @@
             background: #a93025 !important;
           }
         }
-
         .share{
+          a{
+            border-radius: 50px;
+            border: 1px solid #949494;
+            color: #949494;
+            display: block;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+          }
         }
       }
     }

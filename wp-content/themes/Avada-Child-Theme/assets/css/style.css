@@ -693,44 +693,56 @@
   background: #a93025 !important;
 }
 
-/* line 574, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 568, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+.page-hightlight-spot-holder .wrapper .cont .next-more .share a {
+  border-radius: 50px;
+  border: 1px solid #949494;
+  color: #949494;
+  display: block;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+/* line 583, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .bwg_loading_div_2 {
   background-color: #f7f3e4 !important;
 }
 
-/* line 577, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 586, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .fusion-post-content-wrapper {
   background: white !important;
 }
 
-/* line 580, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 589, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .fusion-content-sep {
   margin-top: 10px;
 }
 
-/* line 583, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 592, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .fusion-image-wrapper .fusion-rollover .fusion-rollover-content a {
   color: white !important;
 }
 
-/* line 586, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 595, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .fusion-blog-layout-grid .fusion-post-content-container,
 .fusion-blog-layout-timeline .fusion-post-content-container {
   margin-top: 5px;
 }
 
-/* line 590, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 599, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li {
   border-bottom: 1px solid white;
   padding: 0;
 }
 
-/* line 594, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 603, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li:last-child {
   border-bottom: none;
 }
 
-/* line 597, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 606, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li > a {
   padding: 8px 0 !important;
   text-transform: uppercase;
@@ -738,31 +750,31 @@
   font-weight: normal !important;
 }
 
-/* line 603, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 612, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 #wrapper .fusion-vertical-menu-widget .menu li.current_page_item > a {
   border-right-color: transparent;
   font-weight: bold !important;
   color: white;
 }
 
-/* line 608, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 617, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .pagination {
   width: 100%;
   margin: 15px 0 0 0;
   text-align: center;
 }
 
-/* line 613, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 622, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .fusion-footer footer .fusion-columns .fusion-column {
   position: unset;
 }
 
-/* line 616, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 625, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .fusion-footer footer .fusion-row {
   position: relative;
 }
 
-/* line 619, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
+/* line 628, /Users/MolnarIstvan/Documents/Munka/busojaras/mohbus/wp-content/themes/Avada-Child-Theme/assets/css/sass/_base.scss */
 .szechenyi-infoimg {
   position: absolute;
   right: 0;

@@ -13,7 +13,7 @@
         <a href="<?php echo get_the_permalink($post); ?>"><?php echo __('Tovább', 'buso'); ?></a>
       </div>
       <div class="share">
-share
+        <a title="<?php echo __('Megosztás a Facebook-on!', 'buso'); ?>" href="https://www.facebook.com/sharer.php?u=<?php echo get_the_permalink($post); ?>&t=<?php echo $post->post_title; ?>" target="_blank"><i class="fa fa-facebook"></i></a>
       </div>
     </div>
   </div>
