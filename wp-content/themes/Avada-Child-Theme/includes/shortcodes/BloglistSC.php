@@ -99,7 +99,13 @@ class BlogListSC
               infinite: true,
               slidesToShow: 3,
               slidesToScroll: 1,
-              autoplay: true
+              autoplay: true,
+              responsive: [{
+                  breakpoint: 640,
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }]
             });
           });
         })(jQuery);

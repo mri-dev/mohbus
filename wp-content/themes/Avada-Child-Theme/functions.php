@@ -33,7 +33,8 @@ function get_site_title( $site = '' )
 function get_languages()
 {
   global $wpdb;
-  $qry = $wpdb->prepare("SELECT blog_id, domain FROM {$wpdb->prefix}blogs WHERE public = 1 and deleted = 0 and archived = 0");
+
+  $qry = $wpdb->prepare("SELECT blog_id, domain FROM buso_blogs WHERE public = 1 and deleted = 0 and archived = 0");
   $qry = $wpdb->get_results($qry);
   $langs = array();
 

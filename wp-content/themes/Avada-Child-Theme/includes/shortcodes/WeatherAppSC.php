@@ -30,6 +30,8 @@ class WeatherAppSC
       /* Parse the arguments. */
       $attr = shortcode_atts( $defaults, $attr );
 
+      setlocale(LC_TIME, get_locale());
+
       $pass_data['weather'] = $weather;
 
       $output = '<div class="'.self::SCTAG.'-holder">';

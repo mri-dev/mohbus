@@ -48,6 +48,13 @@ class TamogatoLogosSC
       $output .= '<script>
       (function($){
         $(function(){
+          var pw = $(window).width();
+
+          if (pw <= 1000) {
+            $(".tamogatoslide#tamog'.$hash.'").css({
+              width: pw
+            });
+          }
           $(".tamogatoslide#tamog'.$hash.'").slick({
             infinite: true,
             slidesToShow: 1,

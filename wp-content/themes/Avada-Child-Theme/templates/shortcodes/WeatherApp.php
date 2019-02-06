@@ -5,7 +5,16 @@
   <div class="info">
     <div class="date">
       <div class="day">
-        <?php echo utf8_encode(strftime('%Y. %B %d.')); ?>
+        <?php
+        switch (get_locale()) {
+          case 'hu_HU': default:
+            echo utf8_encode(strftime('%Y. %B %d.'));
+          break;
+          case 'en_US':
+            echo utf8_encode(strftime('%d %B %Y'));
+          break;
+        }
+      ?>
       </div>
       <div class="weekday">
         <?php echo utf8_encode(strftime('%A')); ?>
