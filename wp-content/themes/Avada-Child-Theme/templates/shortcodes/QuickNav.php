@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="">
-    <a href="/media/busojaras-eloben/">
+    <a target="_blank" href="http://live.onlinecamera.net/87-fast.html ">
       <i class="far fa-play-circle"></i> <?php echo __('Élő közvetítés', 'buso'); ?>
     </a>
   </div>
@@ -10,7 +10,7 @@
     </a>
   </div>
   <div class="">
-    <a href="http://www.mohács.hu" target="_blank">
+    <a href="http://www.mohacs.hu" target="_blank">
       <i class="fa fa-home"></i> <?php echo __('mohács.hu', 'buso'); ?>
     </a>
   </div>
