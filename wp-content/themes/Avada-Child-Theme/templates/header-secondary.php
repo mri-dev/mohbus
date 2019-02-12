@@ -83,7 +83,7 @@ foreach ((array)$languages as $lang) {
         <?php endif; ?>
         <div class="searcher">
           <div class="searcher-holder">
-            <form class="" action="" method="get">
+            <form class="" action="/" method="get">
               <input type="text" name="s" placeholder="<?php echo __('Keresés...', 'buso'); ?>" value="<?php echo $_GET['s']; ?>">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>

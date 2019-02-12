@@ -45,6 +45,12 @@ function get_languages()
       if (strpos($q->domain, 'en.busojaras' ) !== false) {
         $q->lang = "English";
         $q->local = "en_US";
+      } else if(strpos($q->domain, 'de.busojaras' ) !== false){
+        $q->lang = "Deutsch";
+        $q->local = "de_DE";
+      } else if(strpos($q->domain, 'hr.busojaras' ) !== false){
+        $q->lang = "Hrvatski";
+        $q->local = "hr_HR";
       } else {
         $q->lang = "Magyar";
         $q->local = "hu_HU";
@@ -184,6 +190,7 @@ add_action( 'wp_head', 'fontawesome_header', 99);
 
 function avada_lang_setup() {
 	$lang = get_stylesheet_directory() . '/langs';
+  load_theme_textdomain('Avada', get_template_directory().'/languages');
 	load_child_theme_textdomain( 'buso', $lang );
   $ucid = ucid();
   $ucid = $_COOKIE['uid'];
