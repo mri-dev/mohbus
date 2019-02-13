@@ -68,6 +68,12 @@ $posttype = (!$posttype) ? 'post' : $posttype;
 				    <?php echo apply_filters('the_content', $desc); ?>
 				  </div>
 				</div>
+			<?php elseif( $pt == 'tamogatok' ): ?>
+				<div class="tamogato">
+					<div class="wrapper">
+						<img src="<?php echo $img; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+					</div>
+				</div>
       <?php endif; ?>
     <?php endwhile; wp_reset_postdata(); ?>
 		<?php if ($posttype == 'videok'): ?></div><?php endif; ?>

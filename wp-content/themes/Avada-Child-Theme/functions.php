@@ -75,8 +75,6 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'slick', IFROOT . '/assets/vendors/slick/slick.css');
     //wp_enqueue_style( 'angular-material','//ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css');
     //wp_enqueue_style( 'angualardatepick', IFROOT . '/assets/vendors/md-date-range-picker/md-date-range-picker.min.css?t=' . ( (DEVMODE === true) ? time() : '' ) );
-
-
     wp_enqueue_script( 'google-maps', '//maps.googleapis.com/maps/api/js?sensor=false&language='.get_locale().'&region=hu&libraries=places&key='.GOOGLE_API_KEY);
     wp_enqueue_script( 'recaptcha', '//www.google.com/recaptcha/api.js');
     wp_enqueue_script( 'jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array('jquery'), '1.12.1');
@@ -279,7 +277,7 @@ function create_custom_posttypes()
   $videok->create();
   add_post_type_support( 'videok', 'excerpt' );
 
-  // Támogatóke
+  // Támogatók
   $tamogatok = new PostTypeFactory( 'tamogatok' );
   $tamogatok->set_textdomain( TD );
   $tamogatok->set_icon('tag');

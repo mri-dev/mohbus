@@ -366,6 +366,21 @@
     }
   }
 
+  &.view-of-tamogatok{
+    align-items: center;
+    .tamogato{
+      flex-basis: calc(100% / 3);
+      text-align: center;
+      .wrapper{
+        padding: 25px;
+      }
+
+      img {
+        max-height: 150px;
+      }
+    }
+  }
+
   &.view-of-video,
   &.view-of-videok
   {
@@ -400,6 +415,12 @@
 .top-highlight-holder{
   .right-panel{
     margin-top: -132px !important;
+  }
+}
+body.post-type-archive-tamogatok{
+  background: white;
+  #main, #wrapper {
+    background: white;
   }
 }
 .quick-nav-holder{
